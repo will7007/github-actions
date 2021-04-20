@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloserver
+spec:
+  selector:
+    matchLabels:
+      run: load-balancer-example
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: load-balancer-example
+    spec:
+      containers:
+        - name: helloserver
+          image: will7007/helloserver
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+              protocol: TCP
+      imagePullSecrets:
+      - name: regcred
