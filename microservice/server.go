@@ -19,5 +19,5 @@ func NewServer(host string, port string) *http.Server {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Did it actually update this time?\n")
+    fmt.Fprintf(w, "I've changed for the better!\n")
 }
