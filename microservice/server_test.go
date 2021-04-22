@@ -15,7 +15,7 @@ var (
 // Unit Tests
 
 func TestHandler(t *testing.T) {
-	expected := []byte("Did it actually update this time?\n")
+	expected := []byte("I've changed for the better!\n")
 
 	req, err := http.NewRequest("GET", buildUrl("/"), nil)
 	if err != nil {
